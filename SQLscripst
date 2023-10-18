@@ -1,0 +1,23 @@
+CREATE DATABASE tiendaRopa;
+use tiendaropa;use tiendaropa;
+
+CREATE TABLE usuarios (
+    id int PRIMARY key AUTO_INCREMENT,
+    nombre varchar(25) NOT null,
+    apellidos varchar(30) not null,
+    direccion varchar(50),
+    telefono int(9),
+    correo varchar(20) UNIQUE,
+    contraseña varchar(32),
+    dni varchar(9) UNIQUE
+);
+
+CREATE TABLE productos (
+	id int(11) PRIMARY KEY AUTO_INCREMENT,
+    nombre varchar(15),
+    descripcion varchar(100),
+    precio float(7,2),
+    imagen varchar(30),
+    oferta tinyint(1),
+    fecha date
+);
