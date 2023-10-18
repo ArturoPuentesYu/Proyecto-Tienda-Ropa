@@ -148,7 +148,7 @@ window.onload = () => {
                   <div class="col-md-4">
                       <h5>Quiénes somos</h5>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      <a href="./sobre_nosotros.html" class="btn btn-outline-light">Más información</a>
+                      <a href="./paginas/sobre_nosotros.html" class="btn btn-outline-light">Más información</a>
                   </div>
                   <div class="col-md-4">
                       <h5>Trabaja con nosotros</h5>
@@ -162,7 +162,7 @@ window.onload = () => {
                           <p>Teléfono: (123) 456-7890</p>
                           <p>Email: info@example.com</p>
                       </address>
-                      <a href="./contacto.html" class="btn btn-outline-light">Enviar mensaje</a>
+                      <a href="./paginas/contacto.html" class="btn btn-outline-light">Enviar mensaje</a>
                   </div>
               </div>
           </div>
@@ -222,28 +222,28 @@ window.onload = () => {
   //         .then(response => { return response.text(); })
   //         .then(data => console.log(data));
   // }
-  const email = "a@a.es";
-  const pass = "2";
-  const nombre = "Arturo";
-  const apellidos = "Puentes";
-  const dirr = "123 calle principal";
-  const tel = "6666666";
-  const dni = "y9299290j";
-  let formData = new FormData();
-  formData.append("registroCorreo", email);
-  formData.append("registroPass", pass);
-  formData.append("registroNombre", nombre);
-  formData.append("registroApellidos", apellidos);
-  formData.append("registroDir", dirr);
-  formData.append("registroTel", tel);
-  formData.append("dni", dni);
-  fetch("../php/registro.php", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.text())
-    .then((data) => console.log(data));
+  //   const email = "a@a.es";
+  //   const pass = "2";
+  //   const nombre = "Arturo";
+  //   const apellidos = "Puentes";
+  //   const dirr = "123 calle principal";
+  //   const tel = "6666666";
+  //   const dni = "y9299290j";
+  //   let formData = new FormData();
+  //   formData.append("registroCorreo", email);
+  //   formData.append("registroPass", pass);
+  //   formData.append("registroNombre", nombre);
+  //   formData.append("registroApellidos", apellidos);
+  //   formData.append("registroDir", dirr);
+  //   formData.append("registroTel", tel);
+  //   formData.append("dni", dni);
+  //   fetch("../php/registro.php", {
+  //     method: "POST",
+  //     body: formData,
+  //   })
+  //     .then((response) => response.text())
+  //     .then((data) => console.log(data));
 
-  crearNav();
-  crearFooter();
+  //   crearNav();
+  //   crearFooter();
 };
