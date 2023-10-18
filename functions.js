@@ -12,7 +12,7 @@ window.onload = () => {
 
     navBar.innerHTML = `<div class="container-fluid">
           <!-- Logo a la izquierda -->
-          <a class="navbar-brand" href="./index.html">Logo<img src="tu-logo.png" alt=""></a>
+          <a class="navbar-brand" href="./index.php">Logo<img src="tu-logo.png" alt=""></a>
       
           <!-- Botón para colapsar el navbar en pantallas pequeñas -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -171,79 +171,79 @@ window.onload = () => {
           </div>`;
     document.body.append(footer);
   };
-  // const loginForm = document.getElementById('loginForm');
-  // const registroForm = document.getElementById('registroForm');
 
-  // loginForm.addEventListener('submit', e => {
-  //     e.preventDefault();
+  crearNav();
+  crearFooter();
 
-  //     loginUser('loginEmail', 'loginPass');
-  // })
+const loginForm = document.getElementById('loginForm');
+const registroForm = document.getElementById('registroForm');
 
-  // registroForm.addEventListener('submit', e => {
-  //     e.preventDefault();
+const loginUser = () => {
+    const email = document.getElementById('loginEmail').value;
+    const pass = document.getElementById('loginPass').value;
 
-  //     registerUser();
-  // })
+    let formData = new FormData();
+    formData.append('loginEmail',email);
+    formData.append('loginPass',pass);
 
-  // const loginUser = (loginEmailInputId, loginPassInputId) => {
-  //     const email = document.getElementById(`${loginEmailInputId}`).value;
-  //     const pass = document.getElementById(`${loginPassInputId}`).value;
+    fetch('./php/login.php', { method: 'POST', body: formData })
+    .then(response => { return response.text(); })
+    .then(data => console.log(data));
+}
+const registerUser = () => {
+    const email = document.getElementById('registroCorreo').value;
+    const pass = document.getElementById('registroPass').value;
+    const nombre = document.getElementById('registroNombre').value;
+    const apellidos = document.getElementById('registroApellidos').value;
+    const dirr = document.getElementById('registroDir').value;
+    const tel = document.getElementById('registroTel').value;
+    const dni = document.getElementById('dni').value;
+    let formData = new FormData();
+    formData.append('registroCorreo', email);
+    formData.append('registroPass', pass);
+    formData.append('registroNombre', nombre);
+    formData.append('registroApellidos', apellidos);
+    formData.append('registroDir', dirr);
+    formData.append('registroTel', tel);
+    formData.append('dni', dni);
+    fetch('./php/registro.php', {
+        method: "POST",
+        body: formData
+    })
+        .then(response => { return response.text(); })
+        .then(data => console.log(data));
+}
 
-  //     fetch(`./php/login.php?=loginEmail${email.toLowerCase()}?loginPass=${pass.value}`, { method: 'POST' })
-  //         .then(respuesta => {
-  //             console.log(respuesta);
-  //         })
-  // }
+loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    loginUser();
+})
 
-  // const registerUser = () => {
-  //     const email = document.getElementById('registroCorreo').value;
-  //     const pass = document.getElementById('registroPass').value;
-  //     const nombre = document.getElementById('registroNombre').value;
-  //     const apellidos = document.getElementById('registroApellidos').value;
-  //     const dirr = document.getElementById('registroDir').value;
-  //     const tel = document.getElementById('registroTel').value;
-  //     const dni = document.getElementById('dni').value;
+registroForm.addEventListener('submit', e => {
+    e.preventDefault();
+    registerUser();
+})
+//   const email = "a@a.es";
+//   const pass = "2";
+//   const nombre = "Arturo";
+//   const apellidos = "Puentes";
+//   const dirr = "123 calle principal";
+//   const tel = "6666666";
+//   const dni = "y9299290j";
+//   let formData = new FormData();
+//   formData.append("registroCorreo", email);
+//   formData.append("registroPass", pass);
+//   formData.append("registroNombre", nombre);
+//   formData.append("registroApellidos", apellidos);
+//   formData.append("registroDir", dirr);
+//   formData.append("registroTel", tel);
+//   formData.append("dni", dni);
+//   fetch("../php/registro.php", {
+//     method: "POST",
+//     body: formData,
+//   })
+//     .then((response) => response.text())
+//     .then((data) => console.log(data));
 
-  //     let formData = new FormData();
 
-  //     formData.append('registroCorreo', email);
-  //     formData.append('registroPass', pass);
-  //     formData.append('registroNombre', nombre);
-  //     formData.append('registroApellidos', apellidos);
-  //     formData.append('registroDir', dirr);
-  //     formData.append('registroTel', tel);
-  //     formData.append('dni', dni);
-
-  //     fetch('./php/registro.php', {
-  //         method: "POST",
-  //         body: formData
-  //     })
-  //         .then(response => { return response.text(); })
-  //         .then(data => console.log(data));
-  // }
-  //   const email = "a@a.es";
-  //   const pass = "2";
-  //   const nombre = "Arturo";
-  //   const apellidos = "Puentes";
-  //   const dirr = "123 calle principal";
-  //   const tel = "6666666";
-  //   const dni = "y9299290j";
-  //   let formData = new FormData();
-  //   formData.append("registroCorreo", email);
-  //   formData.append("registroPass", pass);
-  //   formData.append("registroNombre", nombre);
-  //   formData.append("registroApellidos", apellidos);
-  //   formData.append("registroDir", dirr);
-  //   formData.append("registroTel", tel);
-  //   formData.append("dni", dni);
-  //   fetch("../php/registro.php", {
-  //     method: "POST",
-  //     body: formData,
-  //   })
-  //     .then((response) => response.text())
-  //     .then((data) => console.log(data));
-
-  //   crearNav();
-  //   crearFooter();
 };

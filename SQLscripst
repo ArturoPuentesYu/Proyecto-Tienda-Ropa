@@ -21,3 +21,13 @@ CREATE TABLE productos (
     oferta tinyint(1),
     fecha date
 );
+
+INSERT INTO productos (nombre, descripcion, precio, imagen, oferta, fecha) VALUES
+    ('nombre1', 'descripcion1', 100.00, 't-shirt.png', 0, '2023-10-18'),
+    ('nombre2', 'descripcion2', 10.00, 't-shirt.png', 1, '2023-10-19'),
+    ('nombre3', 'descripcion3', 30.00, 't-shirt.png', 0, '2023-10-20'),
+     ('nombre4', 'descripcion4', 10.00, 't-shirt.png', 0, '2023-10-18'),
+    ('nombre5', 'descripcion5', 20.00, 't-shirt.png', 1, '2023-10-19'),
+    ('nombre6', 'descripcion6', 30.00, 't-shirt.png', 0, '2023-10-20'),
+    ('nombre7', 'descripcion7', 20.00, 't-shirt.png', 1, '2023-10-19'),
+    ('nombre8', 'descripcion8', 20.00, 't-shirt.png', 1, '2023-10-19');
