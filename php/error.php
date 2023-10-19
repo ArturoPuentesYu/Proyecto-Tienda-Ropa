@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
+
+    
+    <script src="../js/paginasScript.js"></script>
 </head>
 <body>
     

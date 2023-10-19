@@ -12,7 +12,7 @@ window.onload = () => {
 
     navBar.innerHTML = `<div class="container-fluid">
           <!-- Logo a la izquierda -->
-          <a class="navbar-brand" href="./index.php">Logo<img src="tu-logo.png" alt=""></a>
+          <a class="navbar-brand" href="index.php">Logo<img src="tu-logo.png" alt=""></a>
       
           <!-- Botón para colapsar el navbar en pantallas pequeñas -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -148,12 +148,12 @@ window.onload = () => {
                   <div class="col-md-4">
                       <h5>Quiénes somos</h5>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      <a href="./paginas/sobre_nosotros.html" class="btn btn-outline-light">Más información</a>
+                      <a href="paginas/sobre_nosotros.html" class="btn btn-outline-light">Más información</a>
                   </div>
                   <div class="col-md-4">
                       <h5>Trabaja con nosotros</h5>
                       <p>¿Quieres ser parte de nuestro equipo? ¡Únete a nosotros!</p>
-                      <a href="#" class="btn btn-outline-light">Ver oportunidades</a>
+                      <a href="paginas/trabaja_con_nosotros.html" class="btn btn-outline-light">Ver oportunidades</a>
                   </div>
                   <div class="col-md-4">
                       <h5>Contacto</h5>
@@ -162,7 +162,7 @@ window.onload = () => {
                           <p>Teléfono: (123) 456-7890</p>
                           <p>Email: info@example.com</p>
                       </address>
-                      <a href="./paginas/contacto.html" class="btn btn-outline-light">Enviar mensaje</a>
+                      <a href="paginas/contacto.html" class="btn btn-outline-light">Enviar mensaje</a>
                   </div>
               </div>
           </div>

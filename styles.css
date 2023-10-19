@@ -30,3 +30,9 @@ body {
 #contactanos{
   height: 70vh;
 }
+
+.imagen-grande {
+  width: 350px;
+  display: block;
+  margin: auto;
+}

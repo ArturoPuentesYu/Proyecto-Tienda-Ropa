@@ -1,3 +1,4 @@
+DROP DATABASE if EXISTS tiendaropa;
 CREATE DATABASE tiendaRopa;
 use tiendaropa;use tiendaropa;
 
@@ -15,7 +16,7 @@ CREATE TABLE usuarios (
 CREATE TABLE productos (
 	id int(11) PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(15),
-    descripcion varchar(100),
+    descripcion varchar(300),
     precio float(7,2),
     imagen varchar(30),
     oferta tinyint(1),
@@ -23,11 +24,27 @@ CREATE TABLE productos (
 );
 
 INSERT INTO productos (nombre, descripcion, precio, imagen, oferta, fecha) VALUES
-    ('nombre1', 'descripcion1', 100.00, 't-shirt.png', 0, '2023-10-18'),
-    ('nombre2', 'descripcion2', 10.00, 't-shirt.png', 1, '2023-10-19'),
-    ('nombre3', 'descripcion3', 30.00, 't-shirt.png', 0, '2023-10-20'),
-     ('nombre4', 'descripcion4', 10.00, 't-shirt.png', 0, '2023-10-18'),
-    ('nombre5', 'descripcion5', 20.00, 't-shirt.png', 1, '2023-10-19'),
-    ('nombre6', 'descripcion6', 30.00, 't-shirt.png', 0, '2023-10-20'),
-    ('nombre7', 'descripcion7', 20.00, 't-shirt.png', 1, '2023-10-19'),
-    ('nombre8', 'descripcion8', 20.00, 't-shirt.png', 1, '2023-10-19');
+    ('nombre1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aperiam aut est
+                                illo excepturi, veritatis eligendi libero obcaecati possimus dolore fugiat, voluptatem
+                                nam recusandae, atque saepe quos aliquid cum ratione.', 100.00, 't-shirt.png', 0, '2023-10-10'),
+    ('nombre2', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aperiam aut est
+                                illo excepturi, veritatis eligendi libero obcaecati possimus dolore fugiat, voluptatem
+                                nam recusandae, atque saepe quos aliquid cum ratione.', 100.00, 't-shirt.png', 1, '2023-10-11'),
+    ('nombre3', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aperiam aut est
+                                illo excepturi, veritatis eligendi libero obcaecati possimus dolore fugiat, voluptatem
+                                nam recusandae, atque saepe quos aliquid cum ratione.', 110.00, 't-shirt.png', 0, '2023-10-12'),
+    ('nombre4', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aperiam aut est
+                                illo excepturi, veritatis eligendi libero obcaecati possimus dolore fugiat, voluptatem
+                                nam recusandae, atque saepe quos aliquid cum ratione.', 100.00, 't-shirt.png', 0, '2023-10-13'),
+    ('nombre5', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aperiam aut est
+                                illo excepturi, veritatis eligendi libero obcaecati possimus dolore fugiat, voluptatem
+                                nam recusandae, atque saepe quos aliquid cum ratione.', 150.00, 't-shirt.png', 1, '2023-10-14'),
+    ('nombre6', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aperiam aut est
+                                illo excepturi, veritatis eligendi libero obcaecati possimus dolore fugiat, voluptatem
+                                nam recusandae, atque saepe quos aliquid cum ratione.', 120.00, 't-shirt.png', 0, '2023-10-15'),
+    ('nombre7', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aperiam aut est
+                                illo excepturi, veritatis eligendi libero obcaecati possimus dolore fugiat, voluptatem
+                                nam recusandae, atque saepe quos aliquid cum ratione.', 130.00, 't-shirt.png', 1, '2023-10-16'),
+    ('nombre8', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aperiam aut est
+                                illo excepturi, veritatis eligendi libero obcaecati possimus dolore fugiat, voluptatem
+                                nam recusandae, atque saepe quos aliquid cum ratione.', 120.00, 't-shirt.png', 1, '2023-10-19');
