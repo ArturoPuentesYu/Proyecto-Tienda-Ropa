@@ -41,7 +41,6 @@ class conexionBBDD
                 if (password_verify($contraseña, $usuario['contraseña'])) {
                     // Inicio de sesión exitoso
                     echo "Inicio de sesión exitoso";
-                    return $usuario;
                 } else {
                     // Contraseña incorrecta
                     echo "Contraseña incorrecta";
@@ -60,10 +59,12 @@ class conexionBBDD
     function registrarUsuario($email, $pass, $nombre, $apellidos, $dirr, $tel, $dni)
     {
         // Prepara la consulta SQL para insertar los datos en la tabla "usuarios"
-        $sql = "INSERT INTO usuarios (correo, contraseña, nombre, apellidos, direccion, telefono, dni) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO usuarios (correo, contraseña, nombre, apellidos, direccion, telefono, dni, rol) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $rol = 0;
+        $passcrypted = crypt($pass, 'CRYPT_SHA512');
 
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("sssssss", $email, crypt($pass, 'CRYPT_SHA512'), $nombre, $apellidos, $dirr, $tel, $dni);
+        $stmt->bind_param("ssssssss", $email, $passcrypted, $nombre, $apellidos, $dirr, $tel, $dni, $rol);
 
         if ($stmt->execute()) {
             echo "Registro exitoso"; // Puedes devolver cualquier mensaje que desees

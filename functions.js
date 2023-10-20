@@ -187,9 +187,19 @@ const loginUser = () => {
     formData.append('loginPass',pass);
 
     fetch('./php/login.php', { method: 'POST', body: formData })
-    .then(response => { return response.text(); })
-    .then(data => console.log(data));
+    .then(response => { return response.json(); })
+    .then(data => {
+        if (data.success) {
+            // Si la autenticación es exitosa,
+        } else {
+            
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error)
+    });
 }
+
 const registerUser = () => {
     const email = document.getElementById('registroCorreo').value;
     const pass = document.getElementById('registroPass').value;
@@ -223,27 +233,27 @@ registroForm.addEventListener('submit', e => {
     e.preventDefault();
     registerUser();
 })
-//   const email = "a@a.es";
-//   const pass = "2";
-//   const nombre = "Arturo";
-//   const apellidos = "Puentes";
-//   const dirr = "123 calle principal";
-//   const tel = "6666666";
-//   const dni = "y9299290j";
-//   let formData = new FormData();
-//   formData.append("registroCorreo", email);
-//   formData.append("registroPass", pass);
-//   formData.append("registroNombre", nombre);
-//   formData.append("registroApellidos", apellidos);
-//   formData.append("registroDir", dirr);
-//   formData.append("registroTel", tel);
-//   formData.append("dni", dni);
-//   fetch("../php/registro.php", {
-//     method: "POST",
-//     body: formData,
-//   })
-//     .then((response) => response.text())
-//     .then((data) => console.log(data));
+//    const email = "a@a.es";
+//    const pass = "2";
+//    const nombre = "Arturo";
+//    const apellidos = "Puentes";
+//    const dirr = "123 calle principal";
+//    const tel = "6666666";
+//    const dni = "y9299290j";
+//    let formData = new FormData();
+//    formData.append("registroCorreo", email);
+//    formData.append("registroPass", pass);
+//    formData.append("registroNombre", nombre);
+//    formData.append("registroApellidos", apellidos);
+//    formData.append("registroDir", dirr);
+//    formData.append("registroTel", tel);
+//    formData.append("dni", dni);
+//    fetch("../php/registro.php", {
+//      method: "POST",
+//      body: formData,
+//    })
+//      .then((response) => response.text())
+//      .then((data) => console.log(data));
 
 
 };

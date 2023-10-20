@@ -1,6 +1,6 @@
 DROP DATABASE if EXISTS tiendaropa;
 CREATE DATABASE tiendaRopa;
-use tiendaropa;use tiendaropa;
+use tiendaropa;
 
 CREATE TABLE usuarios (
     id int PRIMARY key AUTO_INCREMENT,
@@ -10,7 +10,8 @@ CREATE TABLE usuarios (
     telefono int(9),
     correo varchar(20) UNIQUE,
     contraseña varchar(32),
-    dni varchar(9) UNIQUE
+    dni varchar(9) UNIQUE, 
+    rol tinyint(1) NOT NULL
 );
 
 CREATE TABLE productos (
