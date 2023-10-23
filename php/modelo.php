@@ -24,38 +24,7 @@ class conexionBBDD
         }
         return $arrayDatos;
     }
-
-    function buscarUsuarioPorCorreo($correo, $contraseña)
-    {
-        // Consulta SQL para buscar el usuario por correo
-        $sql = "SELECT * FROM usuarios WHERE correo = ?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("s", $correo);
-
-        if ($stmt->execute()) {
-            $result = $stmt->get_result();
-            $usuario = $result->fetch_assoc();
-
-            if ($usuario) {
-                // Verifica la contraseña
-                if (password_verify($contraseña, $usuario['contraseña'])) {
-                    // Inicio de sesión exitoso
-                    echo "Inicio de sesión exitoso";
-                } else {
-                    // Contraseña incorrecta
-                    echo "Contraseña incorrecta";
-                }
-            } else {
-                // Usuario no encontrado
-                echo "Usuario no encontrado";
-            }
-        } else {
-            echo "Error en la consulta: " . $stmt->error;
-        }
-        // Cierra la conexión
-        $stmt->close();
-    }
-
+    
     function registrarUsuario($email, $pass, $nombre, $apellidos, $dirr, $tel, $dni)
     {
         // Prepara la consulta SQL para insertar los datos en la tabla "usuarios"
