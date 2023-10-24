@@ -30,13 +30,13 @@ class conexionBBDD
         // Prepara la consulta SQL para insertar los datos en la tabla "usuarios"
         $sql = "INSERT INTO usuarios (correo, contraseña, nombre, apellidos, direccion, telefono, dni, rol) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $rol = 0;
-        $passcrypted = crypt($pass, 'CRYPT_SHA512');
+        //$passcrypted = crypt($pass, 'CRYPT_SHA512');
 
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssssssss", $email, $passcrypted, $nombre, $apellidos, $dirr, $tel, $dni, $rol);
+        $stmt->bind_param("ssssssss", $email, $pass, $nombre, $apellidos, $dirr, $tel, $dni, $rol);
 
         if ($stmt->execute()) {
-            echo "Registro exitoso"; // Puedes devolver cualquier mensaje que desees
+            return true;
         } else {
             echo "Error en el registro: " . $stmt->error;
         }

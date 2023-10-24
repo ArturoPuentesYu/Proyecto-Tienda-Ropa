@@ -200,11 +200,11 @@ class CrearSecciones
                                         <form method='post' id='loginForm' action='$url2'>
                                             <div class='mb-3'>
                                                 <label for='loginEmail' class='form-label'>Correo electrónico</label>
-                                                <input type='email' class='form-control' id='loginEmail' aria-describedby='emailHelp'>
+                                                <input name='loginEmail' type='email' class='form-control' id='loginEmail' aria-describedby='emailHelp'>
                                             </div>
                                             <div class='mb-3'>
                                                 <label for='loginPass' class='form-label'>Contraseña</label>
-                                                <input type='password' class='form-control' id='loginPass'>
+                                                <input name='loginPass' type='password' class='form-control' id='loginPass'>
                                             </div>
                                             <button type='submit' class='btn btn-primary'>Acceder</button>
                                         </form>

@@ -49,3 +49,5 @@ INSERT INTO productos (nombre, descripcion, precio, imagen, oferta, fecha) VALUE
     ('nombre8', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aperiam aut est
                                 illo excepturi, veritatis eligendi libero obcaecati possimus dolore fugiat, voluptatem
                                 nam recusandae, atque saepe quos aliquid cum ratione.', 120.00, 't-shirt.png', 1, '2023-10-19');
+
+INSERT into usuarios (nombre,apellidos,direccion,telefono,correo,contraseña,dni,rol) VALUES ('Arturo', 'Puentes Yu', '123 Calle Principal', 'a@a.es', '', 'Y2', '1');

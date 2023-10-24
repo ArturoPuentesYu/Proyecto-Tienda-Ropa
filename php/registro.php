@@ -14,7 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once "modelo.php";
     $conexion = new conexionBBDD('127.0.0.1:3307', 'root', '', 'tiendaropa');
 
-    $conexion->registrarUsuario($email, $pass, $nombre, $apellidos, $dirr, $tel, $dni);
+    if ($conexion->registrarUsuario($email, $pass, $nombre, $apellidos, $dirr, $tel, $dni)) {
+        echo("<script>history.back();</script>");
+    }
+
+
 
 } else {
     echo "Solicitud no válida";
