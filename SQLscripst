@@ -3,7 +3,7 @@ CREATE DATABASE tiendaRopa;
 use tiendaropa;
 
 CREATE TABLE usuarios (
-    id int PRIMARY key AUTO_INCREMENT,
+    id int(8) PRIMARY key AUTO_INCREMENT,
     nombre varchar(25) NOT null,
     apellidos varchar(30) not null,
     direccion varchar(50),
@@ -22,6 +22,16 @@ CREATE TABLE productos (
     imagen varchar(30),
     oferta tinyint(1),
     fecha date
+);
+
+CREATE TABLE carrito_de_compras (
+  id_usuario INT(8) NOT NULL,
+  id_producto INT(11) NOT NULL,
+  precio DECIMAL(10,2) NOT NULL,
+  cantidad INT NOT NULL,
+  PRIMARY KEY (id_usuario,id_producto),
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+  FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
 INSERT INTO productos (nombre, descripcion, precio, imagen, oferta, fecha) VALUES
@@ -50,4 +60,4 @@ INSERT INTO productos (nombre, descripcion, precio, imagen, oferta, fecha) VALUE
                                 illo excepturi, veritatis eligendi libero obcaecati possimus dolore fugiat, voluptatem
                                 nam recusandae, atque saepe quos aliquid cum ratione.', 120.00, 't-shirt.png', 1, '2023-10-19');
 
-INSERT into usuarios (nombre,apellidos,direccion,telefono,correo,contraseña,dni,rol) VALUES ('Arturo', 'Puentes Yu', '123 Calle Principal', 'a@a.es', '', 'Y2', '1');
+INSERT into usuarios (nombre,apellidos,direccion,telefono,correo,contraseña,dni,rol) VALUES ('Arturo', 'Puentes Yu', '123 Calle Principal', '676', 'a@a.es', '2', 'Y2', '1');

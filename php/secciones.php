@@ -111,15 +111,14 @@ class CrearSecciones
             $url2 = './php/login.php';
             $url3 = './php/registro.php';
         } else {
-            $url = '../index.php';
+            $url = '../../index.php';
             $url2 = 'login.php';
             $url3 = 'registro.php';
         }
-
+        session_start();
         if (isset($_SESSION['nombre'])) {
             $user = $_SESSION['nombre'];
-            echo "
-            <nav class='navbar navbar-expand-lg navbar-light bg-light bg-gradient'><div class='container-fluid'>
+            echo "<nav class='navbar navbar-expand-lg navbar-light bg-light bg-gradient'><div class='container-fluid'>
             <!-- Logo a la izquierda -->
             <a class='navbar-brand' href='$url'>Logo<img src='tu-logo.png' alt=''></a>
         
@@ -137,7 +136,7 @@ class CrearSecciones
                             <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'></path>
                         </svg></button>
                 </form>
-                        <ul class='navbar-nav ml-auto'>
+                    <ul class='navbar-nav ml-auto'>
                         <li class='nav-item dropdown'>
                             <a class='nav-link dropdown-toggle' href='#' id='profileDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person-circle' viewBox='0 0 16 16'>
@@ -154,7 +153,6 @@ class CrearSecciones
                             </div>
                         </li>
                     </ul>
-                </div>
             </div>
         </nav>
             ";

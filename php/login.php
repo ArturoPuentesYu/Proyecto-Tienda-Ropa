@@ -18,7 +18,7 @@ if (isset($_POST['loginEmail']) && isset($_POST['loginPass'])) {
         $_SESSION["id"] = $usuario[0]->id;
         $_SESSION["nombre"] = $usuario[0]->nombre;
         $_SESSION["rol"] = $usuario[0]->rol;
-        echo("<script>history.back();</script>");
+        header('Location: ../index.php');
     }
 
 } else {
