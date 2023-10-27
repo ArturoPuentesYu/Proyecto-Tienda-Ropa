@@ -111,53 +111,94 @@ class CrearSecciones
             $url2 = './php/login.php';
             $url3 = './php/registro.php';
             $url4 = './php/logout.php';
-        } else {
+            $url5 = './php/administracionDeProductos.php';
+        } else if ($referencia == 1) {
             $url = '../../index.php';
             $url2 = 'login.php';
             $url3 = 'registro.php';
             $url4 = 'logout.php';
-        }
+            $url5 = 'administracionDeProductos.php';
+        } 
+
         session_start();
-        if (isset($_SESSION['nombre'])) {
+        if (isset($_SESSION['nombre']) && $_SESSION['rol'] == 1) {
             $user = $_SESSION['nombre'];
-            echo "<nav class='navbar navbar-expand-lg navbar-light bg-light bg-gradient'><div class='container-fluid'>
-            <!-- Logo a la izquierda -->
-            <a class='navbar-brand' href='$url'>Logo<img src='tu-logo.png' alt=''></a>
-        
-            <!-- Botón para colapsar el navbar en pantallas pequeñas -->
-            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
-                <span class='navbar-toggler-icon'></span>
-            </button>
-        
-            <!-- Contenido del navbar -->
-            <div class='collapse navbar-collapse' id='navbarNav'>
-                <!-- Barra de búsqueda en el centro -->
-                <form class='d-flex my-2 my-lg-0 mx-auto'>
-                    <input class='form-control' type='search' placeholder='Buscar' aria-label='Buscar'>
-                    <button class='btn btn-outline-success' type='submit'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='26' fill='currentColor' class='bi bi-search' viewBox='0 0 16 16'>
-                            <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'></path>
-                        </svg></button>
-                </form>
-                    <ul class='navbar-nav ml-auto'>
-                        <li class='nav-item dropdown'>
-                            <a class='nav-link dropdown-toggle' href='#' id='profileDropdown' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-bs-expanded='false'>
-                            <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person-circle' viewBox='0 0 16 16'>
-                              <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z'/>
-                              <path fill-rule='evenodd' d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z'/>
-                            </svg>
-                                $user
-                            </a>
-                            <div class='dropdown-menu' aria-labelledby='profileDropdown'>
-                                <a class='dropdown-item' href='#'>My Profile</a>
-                                <a class='dropdown-item' href='#'>Orders</a>
-                                <div class='dropdown-divider'></div>
-                                <a class='dropdown-item' href='$url4'>Logout</a>
-                            </div>
-                        </li>
-                    </ul>
-            </div>
-        </nav>
-            ";
+            echo    "<nav class='navbar navbar-expand-lg navbar-light bg-light bg-gradient'><div class='container-fluid'>
+                        <!-- Logo a la izquierda -->
+                        <a class='navbar-brand' href='$url'>Logo<img src='tu-logo.png' alt=''></a>
+
+                        <!-- Botón para colapsar el navbar en pantallas pequeñas -->
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+
+                        <!-- Contenido del navbar -->
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <!-- Barra de búsqueda en el centro -->
+                            <form class='d-flex my-2 my-lg-0 mx-auto'>
+                                <input class='form-control' type='search' placeholder='Buscar' aria-label='Buscar'>
+                                <button class='btn btn-outline-success' type='submit'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='26' fill='currentColor' class='bi bi-search' viewBox='0 0 16 16'>
+                                        <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'></path>
+                                    </svg></button>
+                            </form>
+                            <ul class='navbar-nav ml-auto'>
+                                <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='profileDropdown' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-bs-expanded='false'>
+                                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person-circle' viewBox='0 0 16 16'>
+                                      <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z'/>
+                                      <path fill-rule='evenodd' d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z'/>
+                                    </svg>
+                                        $user
+                                    </a>
+                                    <div class='dropdown-menu' aria-labelledby='profileDropdown'>
+                                        <a class='dropdown-item' href='#'>My Profile</a>
+                                        <a class='dropdown-item' href='$url5'>Añadir/Modificar productos</a>
+                                        <div class='dropdown-divider'></div>
+                                        <a class='dropdown-item' href='$url4'>Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>";
+        } else if (isset($_SESSION['nombre']) && $_SESSION['rol'] == 1) {
+            $user = $_SESSION['nombre'];
+            echo    "<nav class='navbar navbar-expand-lg navbar-light bg-light bg-gradient'><div class='container-fluid'>
+                        <!-- Logo a la izquierda -->
+                        <a class='navbar-brand' href='$url'>Logo<img src='tu-logo.png' alt=''></a>
+
+                        <!-- Botón para colapsar el navbar en pantallas pequeñas -->
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+
+                        <!-- Contenido del navbar -->
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <!-- Barra de búsqueda en el centro -->
+                            <form class='d-flex my-2 my-lg-0 mx-auto'>
+                                <input class='form-control' type='search' placeholder='Buscar' aria-label='Buscar'>
+                                <button class='btn btn-outline-success' type='submit'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='26' fill='currentColor' class='bi bi-search' viewBox='0 0 16 16'>
+                                        <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'></path>
+                                    </svg></button>
+                            </form>
+                            <ul class='navbar-nav ml-auto'>
+                                <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='profileDropdown' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-bs-expanded='false'>
+                                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person-circle' viewBox='0 0 16 16'>
+                                      <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z'/>
+                                      <path fill-rule='evenodd' d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z'/>
+                                    </svg>
+                                        $user
+                                    </a>
+                                    <div class='dropdown-menu' aria-labelledby='profileDropdown'>
+                                        <a class='dropdown-item' href='#'>My Profile</a>
+                                        <a class='dropdown-item' href='#'>Orders</a>
+                                        <div class='dropdown-divider'></div>
+                                        <a class='dropdown-item' href='$url4'>Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>";
         } else {
 
             echo "
@@ -274,26 +315,6 @@ class CrearSecciones
         </div></nav>
             ";
         }
-
-
-
-        /*
-            <!-- Botones de la derecha -->
-            <ul class="navbar-nav ms-auto">
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="profile-picture.jpg" alt="Profile Picture" width="30" height="30" class="rounded-circle">
-            John Doe
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-            <li><a class="dropdown-item" href="#">Mi perfil</a></li>
-            <li><a class="dropdown-item" href="#">Pedidos</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-        </ul>
-    </li>
-</ul>
-*/
     }
 
     static function crearFooter($referencia)
